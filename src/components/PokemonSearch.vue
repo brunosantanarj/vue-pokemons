@@ -5,8 +5,8 @@ const store = useSearchStore()
 <template>
   <input
     type="search"
+    v-model="store.search"
     placeholder="Pesquise por nome ou código"
     class="py-3 px-12 rounded-[50px] border border-gray-thin w-full text-sm font-mulish"
-    v-model="store.search"
   />
 </template>
