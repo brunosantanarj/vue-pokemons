@@ -1,1 +1,21 @@
-@import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Mulish';
+    src: url('./fonts/Mulish-VariableFont_wght.ttf') format('truetype-variations');
+    src: url('./fonts/Mulish-VariableFont_wght.ttf') format('truetype') tech('variations');
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
+  }
+
+  @font-face {
+    font-family: 'Quicksand';
+    src: url('./fonts/Quicksand-VariableFont_wght.ttf') format('truetype-variations');
+    src: url('./fonts/Quicksand-VariableFont_wght.ttf') format('truetype') tech('variations');
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
+  }
+}
