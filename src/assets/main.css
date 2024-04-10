@@ -19,3 +19,7 @@
     font-stretch: 25% 151%;
   }
 }
+
+body {
+  @apply bg-gray-light;
+}

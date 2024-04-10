@@ -3,6 +3,7 @@ export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     colors: {
+      white: '#fff',
       blue: '#00A3FF',
       red: '#FE0808',
       purple: '#AF08FE',
