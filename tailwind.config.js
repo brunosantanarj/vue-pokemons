@@ -16,7 +16,9 @@ export default {
       schist: '#85826E',
       dark: '#0E0E0E',
       gray: '#C4C4C4',
-      'gray-light': '#f1f4f5'
+      'gray-light': '#f1f4f5',
+      'gray-thin': '#E1E1E1',
+      light: '#C1BEBE'
     },
     fontFamily: {
       quicksand: ['Quicksand', 'sans-serif'],
