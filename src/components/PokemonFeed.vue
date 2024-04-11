@@ -13,7 +13,8 @@ const store = useSearchStore()
 const { data, fetchNextPage } = useInfiniteQuery({
   queryKey: [QueriesKeys.LIST_POKEMONS],
   queryFn: listAll,
-  getNextPageParam: (lastPage) => new URLSearchParams(new URL(lastPage.next).search).get('offset'),
+  getNextPageParam: (lastPage) =>
+    lastPage.next && new URLSearchParams(new URL(lastPage.next).search).get('offset'),
   initialPageParam: '0',
   staleTime: 60 * 1000
 })
