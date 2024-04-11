@@ -6,6 +6,7 @@ Frontend application written in Vue 3 that lists and searches pokemons with the 
 
 ## Technologies used
 
+- [PNPM](https://pnpm.io/pt/)
 - [Vue 3](https://vuejs.org/)
 - [Tailwind](https://tailwindcss.com/)
 - [Vue Query](https://tanstack.com/query/v4/docs/framework/vue/overview)
