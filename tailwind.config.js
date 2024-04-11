@@ -24,7 +24,8 @@ export default {
         gray: '#C4C4C4',
         'gray-light': '#f1f4f5',
         'gray-thin': '#E1E1E1',
-        light: '#C1BEBE'
+        light: '#C1BEBE',
+        regular: '#616161'
       }
     }
   },
