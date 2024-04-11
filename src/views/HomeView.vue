@@ -5,6 +5,6 @@ import PokemonSearch from '@/components/PokemonSearch.vue'
 
 <template>
   <PokemonSearch />
-  <h1 class="text-sm font-bold mt-10 mb-5">Pokémons</h1>
+  <h1 class="text-sm font-bold mt-12 mb-8">Pokémons</h1>
   <PokemonFeed />
 </template>

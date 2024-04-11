@@ -367,10 +367,10 @@ export interface Stat2 {
 
 export interface Type {
   slot: number
-  type: Type2
+  type: ElementaryType
 }
 
-export interface Type2 {
-  name: string
+export interface ElementaryType {
+  name: 'normal' | 'flying' | 'poison' | 'bug' | 'electric' | 'ground' | 'fairy' | 'fire' | 'fighting' | 'water' | 'psychic' | 'ice' | 'ghost' | 'rock' | 'dragon' | 'dark' | 'steel' | 'grass'
   url: string
 }

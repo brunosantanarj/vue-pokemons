@@ -16,18 +16,14 @@ const { data, fetchNextPage } = useInfiniteQuery({
     new URLSearchParams(new URL(lastPage.next).search).get('offset')
 })
 
-useInfiniteScroll(
-  el,
-  (c) => {
-    console.log(c)
-    fetchNextPage()
-  },
-  { distance: 10 }
-)
+useInfiniteScroll(el, fetchNextPage, { distance: 10 })
 </script>
 
 <template>
-  <section ref="el" class="grid gap-3 h-screen grid-cols-2 md:grid-cols-5 overflow-y-scroll">
+  <section
+    ref="el"
+    class="grid gap-3 auto-rows-max h-screen grid-cols-2 md:grid-cols-5 overflow-y-scroll"
+  >
     <FlatCard
       v-for="item in store.filterFn(data?.pages.flatMap((page) => page.results))"
       :pokemon="item"
