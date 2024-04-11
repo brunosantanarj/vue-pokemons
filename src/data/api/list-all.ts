@@ -9,9 +9,7 @@ type Pokemon = {
 const endpoint = `${import.meta.env.VITE_POKEMON_API}/pokemon`
 
 async function listAllDetailed({ results }: APIPaginatedResponse<Pokemon[]>) {
-  const avaiableRequests = await Promise.all(
-    results.map((pokemon) => fetch(pokemon.url))
-  )
+  const avaiableRequests = await Promise.all(results.map((pokemon) => fetch(pokemon.url)))
   return await Promise.all(avaiableRequests.map((request) => request.json()))
 }
 

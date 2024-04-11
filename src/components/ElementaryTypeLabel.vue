@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import { PokemonExplained } from '@/base/types/PokemonExplained'
+import type { PokemonExplained } from '@/base/types/PokemonExplained'
 import { computed, ref } from 'vue'
 
 type ElementaryType = PokemonExplained['types'][0]['type']['name']
+type ExtractedElementType = Extract<
+  ElementaryType,
+  'normal' | 'grass' | 'flying' | 'poison' | 'electric' | 'ground' | 'fairy' | 'fire' | 'water'
+>
 type ElementaryTypeColorScheme = {
-  [keyof in ElementaryType]: { color: string; text: string }
+  [keyof in ExtractedElementType]: { color: string; text: string }
 }
 
 const props = defineProps<{ type: ElementaryType }>()
@@ -22,7 +26,11 @@ const scheme = ref<ElementaryTypeColorScheme>({
 })
 
 const selected = computed(
-  () => scheme.value[props.type] || { color: 'bg-dark', text: props.type.toUpperCase() }
+  () =>
+    scheme.value[props.type as ExtractedElementType] || {
+      color: 'bg-dark',
+      text: props.type.toUpperCase()
+    }
 )
 </script>
 
