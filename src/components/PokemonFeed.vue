@@ -5,18 +5,26 @@ import { useInfiniteQuery } from '@tanstack/vue-query'
 import { useSearchStore } from '@/stores/search'
 import { listAll } from '@/data/api/list-all'
 import FlatCard from '@/components/FlatCard.vue'
+import { QueriesKeys } from '@/base/enums/QueriesKeys'
 
 const el = ref<HTMLElement | null>(null)
 const store = useSearchStore()
 
 const { data, fetchNextPage } = useInfiniteQuery({
-  queryKey: ['LIST_POKEMONS'],
+  queryKey: [QueriesKeys.LIST_POKEMONS],
   queryFn: listAll,
-  getNextPageParam: (lastPage, pages) =>
-    new URLSearchParams(new URL(lastPage.next).search).get('offset')
+  getNextPageParam: (lastPage) => new URLSearchParams(new URL(lastPage.next).search).get('offset'),
+  initialPageParam: '0',
+  staleTime: 60 * 1000
 })
 
-useInfiniteScroll(el, fetchNextPage, { distance: 10 })
+useInfiniteScroll(
+  el,
+  () => {
+    fetchNextPage()
+  },
+  { distance: 10 }
+)
 </script>
 
 <template>

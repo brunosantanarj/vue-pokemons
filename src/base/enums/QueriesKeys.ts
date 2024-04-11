@@ -1,0 +1,4 @@
+export enum QueriesKeys {
+  LIST_POKEMONS = 'LIST_POKEMONS',
+  EXPLAINED_POKEMON = 'EXPLAINED_POKEMON',
+}
